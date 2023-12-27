@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import {evaluate} from 'mathjs'
 const Calculator = () => {
     
     const [result, setResult] = useState('');
@@ -20,14 +20,13 @@ const Calculator = () => {
     }
 
     const calculate = () =>{
-        setResult(eval(result));
+        setResult(evaluate(result));
         setDisplay(!display)
-
     }
       
 
   return (
-    <div className=" font-bold text-white flex items-center justify-center mt-10">
+    <div className=" font-bold text-white flex justify-center mt-10">
       <div className="w-70 h-auto rounded-2xl shadow-xl border-4 border-gray-100">
         <div className="screen m-2 p-1">
           <input
